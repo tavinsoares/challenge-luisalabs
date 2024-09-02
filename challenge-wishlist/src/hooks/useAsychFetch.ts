@@ -52,9 +52,11 @@ export const useFetchAsync = (initialState: IState) => {
 
     promise.then(
       (data) => {
+        console.log("🚀 ~ run ~ data:", data)
         dispatch({ type: EnumActionReducer.RESOLVED, data });
       },
       (error) => {
+        console.log("🚀 ~ run ~ error:", error)
         dispatch({ type: EnumActionReducer.REJECTED, error });
       }
     );
